@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "001",
+    "name": "Products",
+    "number": "900000",
+    "duration": "2"
+    
+  },
+  {
+    "_id": "002",
+    "name": "Customers",
+    "number": "5321",
+    "duration": "2"
+  },
+  {
+    "_id": "003",
+    "name": "Customers Served",
+    "number": "100",
+    "duration": "2"
+  },
+  {
+    "_id": "004",
+    "name": "Brands",
+    "number": "20",
+    "duration": "2"
+  }
+]
