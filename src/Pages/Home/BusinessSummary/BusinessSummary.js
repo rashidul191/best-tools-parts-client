@@ -14,9 +14,9 @@ const BusinessSummary = () => {
   return (
     <div className="my-28">
       <div className="flex justify-center">
-        <div className="md:mb-10">
-          <h2 className="uppercase text-2xl">Business Summary</h2>
-          <div className="h-1 w-60 bg-yellow-500"></div>
+        <div className="mb-5 md:mb-10">
+          <h2 className="uppercase text-3xl font-bold">Business Summary</h2>
+          <div className="h-1 w-58 rounded-full bg-yellow-500"></div>
         </div>
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-4 gap-5">

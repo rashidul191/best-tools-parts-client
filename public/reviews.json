@@ -1,0 +1,26 @@
+[
+    {
+        "_id": "001",
+        "name": "Drandon Rased",
+        "img":"https://i.ibb.co/k2FbqRT/Whats-App-Image-2022-06-05-at-1-11-40-AM.jpg",
+        "description": "I spend a good portion of my day writing, both code and articles. I also spend an even greater (read: 24/7) amount of time in physical pain due to severe arthritis, which necessitates spending a little extra on my keyboard.",
+        "rating":"5"
+        
+      },
+    {
+        "_id": "002",
+        "name": "Briten",
+        "img":"https://i.ibb.co/zxf5z5K/service-2.jpg",
+        "description": "I spend a good portion of my day writing, both code and articles. I also spend an even greater (read: 24/7) amount of time in physical pain due to severe arthritis, which necessitates spending a little extra on my keyboard.",
+        "rating":"5"
+        
+      },
+    {
+        "_id": "003",
+        "name": "Luishi Kap",
+        "img":"https://i.ibb.co/3SSk0DF/banner-2.png",
+        "description": "I spend a good portion of my day writing, both code and articles. I also spend an even greater (read: 24/7) amount of time in physical pain due to severe arthritis, which necessitates spending a little extra on my keyboard.",
+        "rating":"5"
+        
+      }
+]
