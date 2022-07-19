@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Review = ({ review, index }) => {
-  const { name, img, description } = review;
+  const { name, img, description, rating } = review;
   let numSlide = index + 1;
 
   return (
@@ -18,6 +18,8 @@ const Review = ({ review, index }) => {
           <h2 className="text-2xl mt-5">{name}</h2>
           <p className="font-bold">{description}</p>
           <p className="text-yellow-500 mt-5">
+            <span>Rating: {rating} </span>
+
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />
             <FontAwesomeIcon icon={faStar} />

@@ -5,14 +5,14 @@ const BusinessSummary = () => {
   const icons = [faCoffee];
   const [businessSummary, setBusinessSummary] = useState([]);
   useEffect(() => {
-    fetch("businessSummary.json")
+    fetch("http://localhost:5000/business")
       .then((res) => res.json())
       .then((data) => {
         setBusinessSummary(data);
       });
   }, []);
   return (
-    <div className="my-10 md:my-20">
+    <div className="my-10 md:my-16">
       <div className="flex justify-center">
         <div className="mb-5 md:mb-10">
           <h2 className="uppercase text-3xl font-bold">Business Summary</h2>
