@@ -12,7 +12,7 @@ const BusinessSum = ({ businessSum }) => {
         <div class="card-body text-center">
         <FontAwesomeIcon className="text-5xl" icon={faPerson} />
           <h2 class="text-xl">{name}</h2>
-          <p className="text-2xl">{number}</p>
+          <p className="text-2xl">{number} +</p>
         </div>
       </div>
     </div>

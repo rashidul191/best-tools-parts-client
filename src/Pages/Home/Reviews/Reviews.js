@@ -13,7 +13,7 @@ const Reviews = () => {
       });
   }, []);
   return (
-    <div className="my-28">
+    <div className="sm:mt-10 md:mt-28">
       <div className="flex justify-center">
         <div className="mb-5 md:mb-10">
           <h2 className="uppercase text-3xl font-bold">Review</h2>

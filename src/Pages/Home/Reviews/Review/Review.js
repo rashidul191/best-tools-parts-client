@@ -8,7 +8,7 @@ const Review = ({ review, index }) => {
 
   return (
     <div id={`slide${numSlide}`} class="carousel-item relative w-full">
-      <div className="bg-red-100 py-10">
+      <div className="bg-cyan-50 py-10">
         <div className="md:mx-48 text-center">
           <img
             src={img}
