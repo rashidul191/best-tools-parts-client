@@ -5,7 +5,7 @@ const BusinessSummary = () => {
   const icons = [faCoffee];
   const [businessSummary, setBusinessSummary] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/business")
+    fetch("https://quiet-bayou-95560.herokuapp.com/business")
       .then((res) => res.json())
       .then((data) => {
         setBusinessSummary(data);

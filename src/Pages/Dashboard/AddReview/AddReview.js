@@ -21,7 +21,7 @@ const AddReview = () => {
     };
     console.log(addReview);
 
-    const url = `http://localhost:5000/reviews`
+    const url = `https://quiet-bayou-95560.herokuapp.com/reviews`
     fetch(url,{
         method:"POST",
         headers:{
