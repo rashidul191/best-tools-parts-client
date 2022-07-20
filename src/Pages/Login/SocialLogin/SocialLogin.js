@@ -17,7 +17,8 @@ const SocialLogin = () => {
     return <p className="text-error text-center">{error?.message}</p>;
   }
   return (
-    <div className="mx-auto">
+    <div className="w-full mx-auto">
+      <div class="divider">OR</div>
       <button onClick={() => signInWithGoogle()} className="btn w-full">
         Continuo with Google
       </button>
