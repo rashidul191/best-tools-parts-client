@@ -1,8 +1,12 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
@@ -17,15 +21,19 @@ const Register = () => {
   } = useForm();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, errorUpdate] = useUpdateProfile(auth);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (data?.password === data?.confirmPassword) {
+      const displayName = data?.name;
       const email = data?.email;
       const password = data?.password;
-      createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(email, password);
+      await updateProfile({ displayName });
+      toast.success("Registration Successful");
     }
   };
-  if (loading) {
+  if (loading || updating) {
     return <Loading></Loading>;
   }
 
@@ -33,8 +41,12 @@ const Register = () => {
     navigate(from, { replace: true });
   }
   let errorElement;
-  if (error) {
-    errorElement = <p className="text-error">{error?.message}</p>;
+  if (error || errorUpdate) {
+    errorElement = (
+      <p className="text-error">
+        {error?.message} {errorUpdate?.message}
+      </p>
+    );
   }
   return (
     <div class="card w-1/3 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
