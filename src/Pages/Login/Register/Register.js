@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Register = () => {
     }
   };
   if (loading) {
-    return <p className="text-center">Loading..........</p>;
+    return <Loading></Loading>;
   }
 
   if (user) {

@@ -2,7 +2,7 @@ import React from "react";
 
 const Brands = () => {
   return (
-    <div class="carousel carousel-center flex justify-center w-full bg-gray-100 p-4 space-x-4 ">
+    <div class="carousel carousel-center flex justify-center w-full bg-gray-100 p-4 space-x-4 mt-10 md:mt-16 ">
       <div class="carousel-item">
         <img
           src="https://i.ibb.co/KKKSbkM/brand-1.png"
