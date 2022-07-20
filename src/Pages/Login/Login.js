@@ -1,9 +1,13 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import auth from "../../firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading/Loading";
 
 const Login = () => {
@@ -18,6 +22,8 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, errorForget] =
+    useSendPasswordResetEmail(auth);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -26,15 +32,27 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  if (loading) {
-    return <Loading></Loading>
+  const handleForgetPassword = async (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    await sendPasswordResetEmail(email);
+    // console.log(email);
+    toast.success("Email Send");
+  };
+
+  if (loading || sending) {
+    return <Loading></Loading>;
   }
   if (user) {
     navigate(from, { replace: true });
   }
   let errorElement;
-  if (error) {
-    errorElement = <p className="text-error">{error?.message}</p>;
+  if (error || errorForget) {
+    errorElement = (
+      <p className="text-error">
+        {error?.message} {errorForget?.message}
+      </p>
+    );
   }
   return (
     <div class="card w-96 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
@@ -96,15 +114,66 @@ const Login = () => {
               )}
             </label>
           </div>
+          <label htmlFor="forget-password-modal" class="btn btn-link">
+            <small>Forget Password</small>
+          </label>
 
           <div>
             <input
-              className="btn btn-secondary w-full mt-5"
+              className="btn btn-secondary w-full"
               type="submit"
               value="Login"
             />
           </div>
         </form>
+
+        {/* Forget Password modal */}
+
+        <input
+          type="checkbox"
+          id="forget-password-modal"
+          class="modal-toggle"
+        />
+        <div class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <label
+              htmlFor="forget-password-modal"
+              class="btn btn-sm btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <div class="form-control w-full max-w-xs ">
+              <label className="label">
+                <span className="label-text">Email</span>
+              </label>
+              <div className="relative">
+                <form onSubmit={handleForgetPassword}>
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="example@gmail.com"
+                    className="input input-bordered w-full"
+                    required
+                  />
+                  <input
+                    type="submit"
+                    value="Send Email"
+                    className="btn btn-info absolute top-0 right-0 rounded-l-none text-white"
+                  />
+                </form>
+              </div>
+
+              {/* <input
+                type="email"
+               
+                placeholder="Enter Email"
+                className="input input-bordered w-full max-w-xs"
+                required
+              /> */}
+            </div>
+          </div>
+        </div>
+
         <p>
           <small>
             New to Doctors Portal?{" "}
