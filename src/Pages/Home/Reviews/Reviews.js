@@ -4,14 +4,16 @@ import Review from "./Review/Review";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
-  // react query
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("http://localhost:5000/reviews",{
+      method:"GET",
+    })
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
       });
   }, []);
+
   return (
     <div className="sm:mt-10 md:mt-28">
       <div className="flex justify-center">
@@ -26,8 +28,6 @@ const Reviews = () => {
           <Review key={review._id} review={review} index={index}></Review>
         ))}
       </div>
-
-     
     </div>
   );
 };

@@ -14,16 +14,16 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, errorUpdate] = useUpdateProfile(auth, {
     sendEmailVerification: true,
   });
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const onSubmit = async (data) => {
     if (data?.password === data?.confirmPassword) {

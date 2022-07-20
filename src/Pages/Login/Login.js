@@ -14,16 +14,15 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, errorForget] =
+    useSendPasswordResetEmail(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending, errorForget] =
-    useSendPasswordResetEmail(auth);
 
   const onSubmit = (data) => {
     console.log(data);

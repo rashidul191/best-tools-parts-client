@@ -3,20 +3,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Review = ({ review, index }) => {
-  const { name, img, description, rating } = review;
+  console.log(review);
+  const { userName, userPhoto, description, rating } = review;
   let numSlide = index + 1;
+  let descriptionReSize;
+  if (description.length > 250) {
+    descriptionReSize = description.slice(0, 250) + "....";
+  } else {
+    descriptionReSize = description;
+  }
 
   return (
-    <div id={`slide${numSlide}`} class="carousel-item relative w-full">
-      <div className="bg-cyan-50 py-10">
+    <div
+      id={`slide${numSlide}`}
+      class="carousel-item relative w-full bg-cyan-50 mx-auto"
+    >
+      <div className="py-10">
         <div className="md:mx-48 text-center">
           <img
-            src={img}
+            src={userPhoto}
             class="mx-auto w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
-            alt={name}
+            alt={userName}
           />
-          <h2 className="text-2xl mt-5">{name}</h2>
-          <p className="font-bold">{description}</p>
+          <h2 className="text-2xl mt-5">{userName}</h2>
+          <p className="font-bold">{descriptionReSize}</p>
           <p className="text-yellow-500 mt-5">
             <span>Rating: {rating} </span>
 

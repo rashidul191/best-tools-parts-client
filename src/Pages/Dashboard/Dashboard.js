@@ -12,6 +12,7 @@ const Dashboard = () => {
         <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content ">
           <h2 className="text-4xl text-info">Welcome to My Dashboard</h2>
+          <p>{user.email}</p>
           <Outlet></Outlet>
         </div>
 
