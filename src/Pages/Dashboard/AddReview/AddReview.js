@@ -1,17 +1,16 @@
 import React from "react";
+import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 
 const AddReview = () => {
   const [user, loading] = useAuthState(auth);
-  console.log(user)
   if (loading) {
     return <Loading></Loading>;
   }
   const handleAddReviewSubmit = (event) => {
     event.preventDefault();
-
     const addReview = {
       userName: user?.displayName,
       userEmail: user?.email,
@@ -19,22 +18,22 @@ const AddReview = () => {
       rating: event.target.rating.value,
       description: event.target.review.value,
     };
-    console.log(addReview);
-
-    const url = `https://quiet-bayou-95560.herokuapp.com/reviews`
-    fetch(url,{
-        method:"POST",
-        headers:{
-            "content-type":"application/json"
-        },
-        body: JSON.stringify(addReview)
+    const url = `https://quiet-bayou-95560.herokuapp.com/reviews`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addReview),
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        event.reset()
-    })
-
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.insertedId) {
+          toast.success("Review is Done.");
+        } else {
+          toast.error("Failed to Review");
+        }
+      });
   };
 
   return (
@@ -62,13 +61,13 @@ const AddReview = () => {
         <div>
           <select name="rating" class="select select-bordered w-full max-w-lg">
             <option value={5} disabled selected>
-             Rating
+              Rating
             </option>
             <option value={5}>5</option>
             <option value={4}>4</option>
             <option value={3}>3</option>
             <option value={2}>2</option>
-            <option value={1}>1</option>            
+            <option value={1}>1</option>
           </select>
         </div>
 

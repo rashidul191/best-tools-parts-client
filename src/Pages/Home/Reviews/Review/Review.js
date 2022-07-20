@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Review = ({ review, index }) => {
-  console.log(review);
   const { userName, userPhoto, description, rating } = review;
   let numSlide = index + 1;
   let descriptionReSize;
