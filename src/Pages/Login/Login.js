@@ -1,19 +1,44 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin/SocialLogin";
+import auth from "../../firebase.init";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const onSubmit = (data) => {
+    console.log(data);
+    const email = data?.email;
+    const password = data?.password;
+    signInWithEmailAndPassword(email, password);
+  };
+
+  if (loading) {
+    return <p>Loading......</p>;
+  }
+  if (user) {
+    navigate(from, { replace: true });
+  }
+  let errorElement;
+  if (error) {
+    errorElement = <p className="text-error">{error?.message}</p>;
+  }
   return (
     <div class="card w-96 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
       <div class="card-body">
+        {errorElement}
         <h2 class="text-3xl font-bold mb-2 text-secondary text-center">
           Please Login
         </h2>

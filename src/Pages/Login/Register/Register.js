@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -7,6 +7,8 @@ import auth from "../../../firebase.init";
 
 const Register = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const {
     register,
     formState: { errors },
@@ -27,7 +29,7 @@ const Register = () => {
   }
 
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   let errorElement;
   if (error) {
