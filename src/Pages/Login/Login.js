@@ -136,7 +136,7 @@ const Login = () => {
         <div className="modal modal-bottom sm:modal-middle">
           <div className="modal-box">
             <label
-              htmlfor="forget-password-modal"
+              htmlFor="forget-password-modal"
               className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕

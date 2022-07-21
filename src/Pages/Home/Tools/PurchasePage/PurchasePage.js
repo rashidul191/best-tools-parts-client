@@ -6,7 +6,7 @@ import auth from "../../../../firebase.init";
 import Loading from "../../../Shared/Loading/Loading";
 
 const PurchasePage = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate()
   const [errorElement, setErrorElement] = useState(false);
   const [user, loading] = useAuthState(auth);
   const { id } = useParams();
@@ -37,7 +37,7 @@ const PurchasePage = () => {
         userName: user?.displayName,
         userEmail: user?.email,
         toolName: name,
-        toolImg: img,
+        toolImg:img,
         quantity,
         toolPrice,
       };
@@ -73,7 +73,7 @@ const PurchasePage = () => {
             event.target.reset();
             setErrorElement(false);
             toast.success("Order Successfully");
-            navigate("/dashboard/orders");
+            navigate("/dashboard/orders")
           }
         });
     } else {
