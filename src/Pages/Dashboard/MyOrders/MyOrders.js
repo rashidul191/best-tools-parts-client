@@ -7,16 +7,11 @@ const MyOrders = () => {
   const [user] = useAuthState(auth);
   const [orders, setOrders] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:5000/orders?email=${user?.email}`);
-  // }, [user, user?.email]);
-
   useEffect(() => {
     if (user) {
       fetch(`http://localhost:5000/orders?userEmail=${user?.email}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setOrders(data);
         });
     }
@@ -24,7 +19,7 @@ const MyOrders = () => {
 
   return (
     <div>
-      <h2>My Orders : {orders.length}</h2>
+      <h2 className="text-2xl font-bold">My Orders</h2>
 
       <div class="overflow-x-auto">
         <table class="table w-full">

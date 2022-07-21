@@ -37,54 +37,59 @@ const AddReview = () => {
   };
 
   return (
-    <div className="w-1/2 my-10">
-      <h2>Add a Review</h2>
-      <form onSubmit={handleAddReviewSubmit}>
-        <div>
-          <input
-            value={user?.displayName}
-            disabled
-            type="text"
-            className="input input-bordered w-full max-w-lg"
-          />
-        </div>
+    <section>
+      <h2 className="text-2xl font-bold">Add a Review</h2>
+      <div className="my-10 md:w-1/2 mx-auto">
+        <form onSubmit={handleAddReviewSubmit}>
+          <div>
+            <input
+              value={user?.displayName}
+              disabled
+              type="text"
+              className="input input-bordered w-full max-w-lg"
+            />
+          </div>
 
-        <div>
-          <input
-            type="email"
-            disabled
-            value={user.email}
-            placeholder="Type here"
-            className="input input-bordered w-full max-w-lg my-3"
-          />
-        </div>
-        <div>
-          <select name="rating" className="select select-bordered w-full max-w-lg">
-            <option value={5} disabled selected>
-              Rating
-            </option>
-            <option value={5}>5</option>
-            <option value={4}>4</option>
-            <option value={3}>3</option>
-            <option value={2}>2</option>
-            <option value={1}>1</option>
-          </select>
-        </div>
+          <div>
+            <input
+              type="email"
+              disabled
+              value={user.email}
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-lg my-3"
+            />
+          </div>
+          <div>
+            <select
+              name="rating"
+              className="select select-bordered w-full max-w-lg"
+            >
+              <option value={5} disabled selected>
+                Rating
+              </option>
+              <option value={5}>5</option>
+              <option value={4}>4</option>
+              <option value={3}>3</option>
+              <option value={2}>2</option>
+              <option value={1}>1</option>
+            </select>
+          </div>
 
-        <div>
-          <textarea
-            className="textarea input-bordered w-full max-w-lg my-3"
-            placeholder="Text Here"
-            rows={5}
-            name="review"
-            required
-          ></textarea>
-        </div>
-        <div>
-          <input className="btn w-full" type="submit" value="Review" />
-        </div>
-      </form>
-    </div>
+          <div>
+            <textarea
+              className="textarea input-bordered w-full max-w-lg my-3"
+              placeholder="Text Here"
+              rows={5}
+              name="review"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <input className="btn w-full" type="submit" value="Review" />
+          </div>
+        </form>
+      </div>
+    </section>
   );
 };
 
