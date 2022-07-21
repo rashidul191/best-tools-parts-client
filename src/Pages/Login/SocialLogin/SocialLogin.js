@@ -20,7 +20,7 @@ const SocialLogin = () => {
   }
   return (
     <div className="w-full mx-auto">
-      <div class="divider">OR</div>
+      <div className="divider">OR</div>
       <button onClick={() => signInWithGoogle()} className="btn w-full">
         Continuo with Google
       </button>

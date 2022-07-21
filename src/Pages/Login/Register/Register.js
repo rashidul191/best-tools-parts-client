@@ -51,10 +51,10 @@ const Register = () => {
     );
   }
   return (
-    <div class="card w-1/3 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
-      <div class="card-body">
+    <div className="card w-1/3 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
+      <div className="card-body">
         {errorElement}
-        <h2 class="text-3xl font-bold mb-2 text-secondary text-center">
+        <h2 className="text-3xl font-bold mb-2 text-secondary text-center">
           Registration
         </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -68,7 +68,7 @@ const Register = () => {
               })}
               type="text"
               placeholder="Full Name"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
             <label className="label">
               {errors.name?.type === "required" && (
@@ -93,7 +93,7 @@ const Register = () => {
               })}
               type="email"
               placeholder="Email"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
             <label className="label">
               {errors.email?.type === "required" && (
@@ -127,7 +127,7 @@ const Register = () => {
               })}
               type="password"
               placeholder="Password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
             <label className="label">
               {errors.password?.type === "required" && (
@@ -169,7 +169,7 @@ const Register = () => {
               })}
               type="password"
               placeholder="Password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
             <label className="label">
               {errors.confirmPassword?.type === "required" && (

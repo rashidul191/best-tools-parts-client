@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import Loading from "../../Shared/Loading/Loading";
 import Tool from "./Tool/Tool";
 
 const Tools = () => {
@@ -7,7 +8,7 @@ const Tools = () => {
     fetch("https://quiet-bayou-95560.herokuapp.com/tools").then((res) => res.json())
   );
   if (isLoading) {
-    return <p>Lording.....</p>;
+    return <Loading></Loading>
   }
   return (
     <div className="my-8 md:my-16">

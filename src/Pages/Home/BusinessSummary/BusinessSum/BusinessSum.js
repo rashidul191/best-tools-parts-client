@@ -7,10 +7,10 @@ const BusinessSum = ({ businessSum }) => {
 
   return (
     <div className=" flex justify-center">
-      <div class="card w-64 bg-base-100 shadow-xl">
-        <div class="card-body text-center">
+      <div className="card w-64 bg-base-100 shadow-xl">
+        <div className="card-body text-center">
           <FontAwesomeIcon className="text-5xl" icon={faPerson} />
-          <h2 class="text-xl">{name}</h2>
+          <h2 className="text-xl">{name}</h2>
           <p className="text-2xl">{number} +</p>
         </div>
       </div>

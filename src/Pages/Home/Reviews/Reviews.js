@@ -15,15 +15,15 @@ const Reviews = () => {
   }, []);
 
   return (
-    <div className="sm:mt-10 md:mt-28">
+    <div className="sm:mt-10 md:mt-28 py-12 bg-cyan-50">
       <div className="flex justify-center">
-        <div className="mb-5 md:mb-10">
+        <div className="">
           <h2 className="uppercase text-3xl font-bold">Review</h2>
           <div className="h-1 w-22 rounded-full bg-yellow-500"></div>
         </div>
       </div>
 
-      <div class="carousel w-full">
+      <div className="carousel w-full flex items-center">
         {reviews.map((review, index) => (
           <Review key={review._id} review={review} index={index}></Review>
         ))}

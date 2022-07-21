@@ -45,7 +45,7 @@ const AddReview = () => {
             value={user?.displayName}
             disabled
             type="text"
-            class="input input-bordered w-full max-w-lg"
+            className="input input-bordered w-full max-w-lg"
           />
         </div>
 
@@ -55,11 +55,11 @@ const AddReview = () => {
             disabled
             value={user.email}
             placeholder="Type here"
-            class="input input-bordered w-full max-w-lg my-3"
+            className="input input-bordered w-full max-w-lg my-3"
           />
         </div>
         <div>
-          <select name="rating" class="select select-bordered w-full max-w-lg">
+          <select name="rating" className="select select-bordered w-full max-w-lg">
             <option value={5} disabled selected>
               Rating
             </option>
@@ -73,7 +73,7 @@ const AddReview = () => {
 
         <div>
           <textarea
-            class="textarea input-bordered w-full max-w-lg my-3"
+            className="textarea input-bordered w-full max-w-lg my-3"
             placeholder="Text Here"
             rows={5}
             name="review"

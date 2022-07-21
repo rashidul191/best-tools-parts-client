@@ -3,26 +3,26 @@ import React from "react";
 const Banner = () => {
   return (
     <div>
-      <div class="carousel carousel-center">
-        <div class="carousel-item">
+      <div className="carousel carousel-center">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
-        <div class="carousel-item">
+        <div className="carousel-item">
           <img src="https://placeimg.com/400/300/arch" alt="Pizza" />
         </div>
       </div>

@@ -54,10 +54,10 @@ const Login = () => {
     );
   }
   return (
-    <div class="card w-96 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
-      <div class="card-body">
+    <div className="card w-96 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
+      <div className="card-body">
         {errorElement}
-        <h2 class="text-3xl font-bold mb-2 text-secondary text-center">
+        <h2 className="text-3xl font-bold mb-2 text-secondary text-center">
           Please Login
         </h2>
 
@@ -73,7 +73,7 @@ const Login = () => {
               })}
               type="email"
               placeholder="Email"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
             <label className="label">
               {errors.email?.type === "required" && (
@@ -98,7 +98,7 @@ const Login = () => {
               })}
               type="password"
               placeholder="Password"
-              class="input input-bordered w-full max-w-xs"
+              className="input input-bordered w-full max-w-xs"
             />
             <label className="label">
               {errors.password?.type === "required" && (
@@ -113,7 +113,7 @@ const Login = () => {
               )}
             </label>
           </div>
-          <label htmlFor="forget-password-modal" class="btn btn-link">
+          <label htmlFor="forget-password-modal" className="btn btn-link">
             <small>Forget Password</small>
           </label>
 
@@ -131,17 +131,17 @@ const Login = () => {
         <input
           type="checkbox"
           id="forget-password-modal"
-          class="modal-toggle"
+          className="modal-toggle"
         />
-        <div class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
             <label
-              htmlFor="forget-password-modal"
-              class="btn btn-sm btn-circle absolute right-2 top-2"
+              htmlfor="forget-password-modal"
+              className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
-            <div class="form-control w-full max-w-xs ">
+            <div className="form-control w-full max-w-xs ">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>

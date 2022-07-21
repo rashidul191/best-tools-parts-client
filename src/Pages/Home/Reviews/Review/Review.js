@@ -13,19 +13,16 @@ const Review = ({ review, index }) => {
   }
 
   return (
-    <div
-      id={`slide${numSlide}`}
-      class="carousel-item relative w-full bg-cyan-50 mx-auto"
-    >
+    <div id={`slide${numSlide}`} className="carousel-item relative w-full ">
       <div className="py-10">
         <div className="md:mx-48 text-center">
           <img
             src={userPhoto}
-            class="mx-auto w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
+            className="mx-auto w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
             alt={userName}
           />
-          <h2 className="text-2xl mt-5">{userName}</h2>
-          <p className="font-bold">{descriptionReSize}</p>
+          <h2 className="text-2xl font-bold mt-5">{userName}</h2>
+          <p>{descriptionReSize}</p>
           <p className="text-yellow-500 mt-5">
             <span>Rating: {rating} </span>
 
@@ -37,11 +34,11 @@ const Review = ({ review, index }) => {
           </p>
         </div>
       </div>
-      <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-        <a href={`#slide${numSlide - 1}`} class="btn btn-circle">
+      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        <a href={`#slide${numSlide - 1}`} className="btn btn-circle">
           ❮
         </a>
-        <a href={`#slide${numSlide + 1}`} class="btn btn-circle">
+        <a href={`#slide${numSlide + 1}`} className="btn btn-circle">
           ❯
         </a>
       </div>
