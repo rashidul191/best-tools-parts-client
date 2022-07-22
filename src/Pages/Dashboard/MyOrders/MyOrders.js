@@ -1,36 +1,40 @@
 import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Loading from "../../Shared/Loading/Loading";
 import MyOrder from "./MyOrder/MyOrder";
 
 const MyOrders = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    if (user) {
-      fetch(`http://localhost:5000/orders?userEmail=${user?.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("access-token")}`,
-        },
-      })
-        .then((res) => {
-          if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem("access-token");
-            navigate("/");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setOrders(data);
-        });
-    }
-  }, [user, navigate]);
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery(["user-orders"], () =>
+    fetch(`http://localhost:5000/orders?userEmail=${user?.email}`, {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("access-token")}`,
+      },
+    }).then((res) => {
+      if (res.status === 401 || res.status === 403) {
+        signOut(auth);
+        localStorage.removeItem("access-token");
+        navigate("/");
+      }
+      return res.json();
+    })
+  );
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
+
 
   return (
     <div>
@@ -45,12 +49,18 @@ const MyOrders = () => {
               <th>Image</th>
               <th>Quantity</th>
               <th>Price</th>
-              <th>Action</th>
+              <th>Order Cancel</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <MyOrder key={order._id} order={order} index={index}></MyOrder>
+              <MyOrder
+                key={order._id}
+                order={order}
+                index={index}
+                refetch={refetch}
+              ></MyOrder>
             ))}
           </tbody>
         </table>

@@ -5,8 +5,10 @@ import AddProduct from "./Pages/Dashboard/AddProduct/AddProduct";
 import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
+import ManageTools from "./Pages/Dashboard/ManageTools/ManageTools";
 import MyOrders from "./Pages/Dashboard/MyOrders/MyOrders";
 import MyProfile from "./Pages/Dashboard/MyProfile/MyProfile";
+import Payment from "./Pages/Dashboard/Payment/Payment";
 import Home from "./Pages/Home/Home";
 import PurchasePage from "./Pages/Home/Tools/PurchasePage/PurchasePage";
 import Login from "./Pages/Login/Login";
@@ -47,6 +49,7 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="orders" element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route
             path="makeAdmins"
             element={
@@ -60,6 +63,14 @@ function App() {
             element={
               <RequireAdmin>
                 <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageTools"
+            element={
+              <RequireAdmin>
+                <ManageTools></ManageTools>
               </RequireAdmin>
             }
           ></Route>

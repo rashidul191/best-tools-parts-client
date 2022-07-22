@@ -58,7 +58,7 @@ const Login = () => {
     );
   }
   return (
-    <div className="card w-96 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
+    <div className="card w-96 bg-base-100 shadow-xl my-12 md:mb-28 mx-auto">
       <div className="card-body">
         {errorElement}
         <h2 className="text-3xl font-bold mb-2 text-secondary text-center">

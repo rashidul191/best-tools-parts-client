@@ -7,13 +7,14 @@ import useToken from "../../../hooks/useToken";
 const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let from = location.state?.from?.pathname || "/";
+
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   const [token] = useToken(user);
   if (loading) {
     return <p className="text-center">Loading.......</p>;
   }
+  let from = location.state?.from?.pathname || "/";
   if (token) {
     navigate(from, { replace: true });
   }
