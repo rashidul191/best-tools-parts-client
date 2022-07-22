@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AddProduct from "./Pages/Dashboard/AddProduct/AddProduct";
 import AddReview from "./Pages/Dashboard/AddReview/AddReview";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
@@ -54,6 +55,15 @@ function App() {
               </RequireAdmin>
             }
           ></Route>
+          <Route
+            path="addTool"
+            element={
+              <RequireAdmin>
+                <AddProduct></AddProduct>
+              </RequireAdmin>
+            }
+          ></Route>
+
         </Route>
 
         <Route path="*" element={<NotFound></NotFound>}></Route>

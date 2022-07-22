@@ -19,7 +19,6 @@ const RequireAdmin = ({ children }) => {
     signOut(auth);
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-
   if (user.providerData[0]?.providerId === "password" && !user.emailVerified) {
     return <EmailVerification></EmailVerification>;
   }
