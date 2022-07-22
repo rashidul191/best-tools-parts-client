@@ -14,7 +14,7 @@ const ManageTools = () => {
   }
   return (
     <div>
-      <h2 className="text-2xl font-bold">Manage Tools {tools.length}</h2>
+      <h2 className="text-2xl font-bold">Manage Tools</h2>
 
       <div class="overflow-x-auto">
         <table class="table w-full">

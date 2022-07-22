@@ -18,7 +18,6 @@ const Dashboard = () => {
         />
         <div className="drawer-content ">
           <h2 className="text-4xl text-info">Welcome to My Dashboard</h2>
-          <p>{user.email}</p>
           <Outlet></Outlet>
         </div>
 
