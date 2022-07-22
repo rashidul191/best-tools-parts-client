@@ -9,16 +9,18 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import Loading from "../../Shared/Loading/Loading";
+import useToken from "../../../hooks/useToken";
 
 const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  const [updateProfile, updating, errorUpdate] = useUpdateProfile(auth, {
-    sendEmailVerification: true,
-  });
+    useCreateUserWithEmailAndPassword(auth, {
+      sendEmailVerification: true,
+    });
+  const [updateProfile, updating, errorUpdate] = useUpdateProfile(auth);
+  const [token] = useToken(user);
   const {
     register,
     formState: { errors },
@@ -26,20 +28,20 @@ const Register = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    if (data?.password === data?.confirmPassword) {
+    if (data?.password === data?.confirmPassword && !error) {
       const displayName = data?.name;
       const email = data?.email;
       const password = data?.password;
       await createUserWithEmailAndPassword(email, password);
       await updateProfile({ displayName });
-      toast.success("Registration Successful");
+      // toast.success("Registration Successful");
     }
   };
   if (loading || updating) {
     return <Loading></Loading>;
   }
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
   let errorElement;
@@ -51,7 +53,7 @@ const Register = () => {
     );
   }
   return (
-    <div className="card w-1/3 bg-base-100 shadow-xl my-12 md:my-28 mx-auto">
+    <div className="card w-1/3 bg-base-100 shadow-xl my-12 md:mb-28 mx-auto">
       <div className="card-body">
         {errorElement}
         <h2 className="text-3xl font-bold mb-2 text-secondary text-center">

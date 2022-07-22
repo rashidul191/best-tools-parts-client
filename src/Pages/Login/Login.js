@@ -9,6 +9,7 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import Loading from "../Shared/Loading/Loading";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, errorForget] =
     useSendPasswordResetEmail(auth);
+  const [token] = useToken(user);
   const {
     register,
     formState: { errors },
@@ -25,7 +27,6 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     const email = data?.email;
     const password = data?.password;
     signInWithEmailAndPassword(email, password);
@@ -35,14 +36,13 @@ const Login = () => {
     event.preventDefault();
     const email = event.target.email.value;
     await sendPasswordResetEmail(email);
-    // console.log(email);
     toast.success("Email Send");
   };
 
   if (loading || sending) {
     return <Loading></Loading>;
   }
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
   let errorElement;

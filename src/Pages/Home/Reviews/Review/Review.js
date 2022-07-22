@@ -17,7 +17,7 @@ const Review = ({ review, index }) => {
       <div className="py-10">
         <div className="md:mx-48 text-center">
           <img
-            src={userPhoto}
+            src={userPhoto || "https://i.ibb.co/tmprR1w/profile-icon.webp"}
             className="mx-auto w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"
             alt={userName}
           />

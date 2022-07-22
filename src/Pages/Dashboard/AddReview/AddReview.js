@@ -30,6 +30,7 @@ const AddReview = () => {
       .then((data) => {
         if (data?.insertedId) {
           toast.success("Review is Done.");
+          event.target.reset();
         } else {
           toast.error("Failed to Review");
         }

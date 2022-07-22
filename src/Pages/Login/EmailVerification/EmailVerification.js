@@ -6,7 +6,7 @@ import auth from "../../../firebase.init";
 const EmailVerification = () => {
   const [sendEmailVerification] = useSendEmailVerification(auth);
   return (
-    <div className="my-20 md:my-36 text-center">
+    <div className="my-10 md:my-20 text-center">
       <div className="card md:w-1/2 bg-base-100 shadow-xl mx-auto md:p-20">
         <div className="card-body">
           <h2 className=" text-xl md:text-2xl text-error">Your Email is not verify</h2>
