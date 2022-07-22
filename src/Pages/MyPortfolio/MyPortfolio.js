@@ -17,8 +17,8 @@ const MyPortfolio = () => {
           <p>Email: rashidul.191cse.gub@gmail.ocm</p>
           <p className="font-bold">
             Hi, I am Rashidul Islam. I am study of Green University of
-            Bangladesh, Department of Bsc In CSE. I am a Full Stack Web
-            Developer .
+            Bangladesh, Department of Bsc In CSE. I am a Full Stack web
+            developer and responsive website design.
           </p>
           <p className="font-bold">Technology:</p>
           <div className="grid grid-cols-2 md:grid-cols-4 text-green-500">
@@ -35,6 +35,7 @@ const MyPortfolio = () => {
             <li>Firebase</li>
             <li>React Firebase Hook</li>
             <li>Node js</li>
+            <li>JWT</li>
             <li>Mongo DB</li>
             <li>node mongodb crud</li>
             <li>Express</li>
