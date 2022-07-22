@@ -1,29 +1,29 @@
 [
-    {
-        "_id":"001",
-        "name":"Electric Drill",
-        "img":"https://i.ibb.co/w7zsHpL/product-1.jpg",
-        "pricePerUnit":"56",
-        "minOrder":"100",
-        "avaQuantity":"500",
-        "description":"It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-    },
-    {
-        "_id":"002",
-        "name":"Corkscrew Tool",
-        "img":" https://i.ibb.co/D4p1811/product-4.jpg",
-        "pricePerUnit":"40",
-        "minOrder":"120",
-        "avaQuantity":"1000",
-        "description":"It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-    },
-    {
-        "_id":"003",
-        "name":"Diagonal Pliers",
-        "img":" https://i.ibb.co/xh98m6H/produt-3.jpg",
-        "pricePerUnit":"76",
-        "minOrder":"150",
-        "avaQuantity":"1500",
-        "description":"It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
-    }
+  {
+    "_id": "001",
+    "name": "Electric Drill",
+    "img": "https://i.ibb.co/w7zsHpL/product-1.jpg",
+    "pricePerUnit": "56",
+    "minOrder": "100",
+    "avaQuantity": "500",
+    "description": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+  },
+  {
+    "_id": "002",
+    "name": "Corkscrew Tool",
+    "img": " https://i.ibb.co/D4p1811/product-4.jpg",
+    "pricePerUnit": "40",
+    "minOrder": "120",
+    "avaQuantity": "1000",
+    "description": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+  },
+  {
+    "_id": "003",
+    "name": "Diagonal Pliers",
+    "img": " https://i.ibb.co/xh98m6H/produt-3.jpg",
+    "pricePerUnit": "76",
+    "minOrder": "150",
+    "avaQuantity": "1500",
+    "description": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"
+  }
 ]

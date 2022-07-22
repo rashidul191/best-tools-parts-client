@@ -13,7 +13,7 @@ const PurchasePage = () => {
   const [tool, setTool] = useState([]);
   const { name, img, pricePerUnit, avaQuantity, minOrder } = tool;
   useEffect(() => {
-    fetch(`http://localhost:5000/tool/${id}`, {
+    fetch(`https://quiet-bayou-95560.herokuapp.com/tool/${id}`, {
       method: "GET",
     })
       .then((res) => res.json())
@@ -47,7 +47,7 @@ const PurchasePage = () => {
       };
 
       // order summary post api
-      fetch(`http://localhost:5000/order`, {
+      fetch(`https://quiet-bayou-95560.herokuapp.com/order`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -59,7 +59,7 @@ const PurchasePage = () => {
           if (data?.insertedId) {
             console.log(data);
             // update quantity api
-            fetch(`http://localhost:5000/tool/${id}`, {
+            fetch(`https://quiet-bayou-95560.herokuapp.com/tool/${id}`, {
               method: "PUT",
               headers: {
                 "content-type": "application/json",

@@ -14,7 +14,7 @@ const ToolsRow = ({ index, tool, refetch }) => {
 
   // handle delete Product
   const handleDeleteProduct = () => {
-    fetch(`http://localhost:5000/tool/${_id}`, {
+    fetch(`https://quiet-bayou-95560.herokuapp.com/tool/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,

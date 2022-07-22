@@ -1,71 +1,78 @@
-# Getting Started with Create React App
+# best-Tools-Part-BD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My project live link [click here](https://best-tools-parts.web.app/) [https://best-tools-parts.web.app/](https://best-tools-parts.web.app/)
 
-## Available Scripts
+# All Framework and Libraries
+* React
+* React Router
+* Firebase
+* React firebase hook
+* TailwindCSS
+* daisyui (Daisy UI builds a design system that is scalable and designer-friendly. It adds component classes like btn, card, and more to Tailwind CSS.)
+* React-Toastify
+* React-hook-form
+* Mongodb
 
-In the project directory, you can run:
+# Project feature
+## Client side
+* Home Page
+* Banner
+* Tools
+* Business summary
+* Review
+* Footer
+* Dashboard
+* My Profile (any one)
+* user Dashboard
+* i) My Order
+* ii) Add a Review
+* Admin Dashboard
+* i) Make Admin
+* ii) Add Tools or Product
+* iii) Manage Tools
+* Payment System
+* etc..
+## Server Side
+* express
+* cors
+* jwt
+* MongoClient, ServerApiVersion, ObjectId
+* dotenv
 
-### `npm start`
+## Deploy Heroku
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# React
+* React is a JavaScript-based UI development library. Facebook and an open-source developer community run it. Although React is a library rather than a language, it is widely used in web development. The library first appeared in May 2013 and is now one of the most commonly used frontend libraries for web development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# React Router
+* React Router is the standard routing library for React. From the docs: “React Router keeps your UI in sync with the URL. It has a simple API with powerful features like lazy code loading, dynamic route matching, and location transition handling built right in My project use React Router.
+* RequireAuth
+* CustomLink
+* useNavigate
+* useLocation
 
-### `npm test`
+# React Query
+* React Query is often described as the missing data-fetching library for React, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your React applications a breeze.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* installation
+* i) $ npm i @tanstack/react-query
+* ii)  const { isLoading, error, data } = useQuery(['repoData'], () =>
+    fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+      res.json()
+      )
 
-### `npm run build`
+# react-toastify
+* React toastiy use only forget password. when the user wants to change the password before giving the email address to the email field. that's why use react toastiy.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# react firebase hooks
+* My project use react firebase hook first of all install # with npm npm install --save react-firebase-hooks thanks use Authentication Hooks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* i) useAuthState
+* ii) useCreateUserWithEmailAndPassword
+* iii) useSignInWithEmailAndPassword
+* iv) useSignInWithGoogle
+* v) useSendPasswordResetEmail
+* vi) useSendEmailVerification
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # manufacturer-website-client-side-rashidul191

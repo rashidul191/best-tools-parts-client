@@ -35,7 +35,7 @@ const AddProduct = () => {
           //   console.log(toolInfo)
           // send toolInfo on data base
 
-          fetch("http://localhost:5000/tool", {
+          fetch("https://quiet-bayou-95560.herokuapp.com/tool", {
             method: "POST",
             headers: {
               "content-type": "application/json",
