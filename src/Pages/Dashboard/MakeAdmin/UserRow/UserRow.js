@@ -13,10 +13,18 @@ const UserRow = ({ user, index, refetch }) => {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        if (res.status === 403) {
+          toast.error("Filed to Make an admin");
+        }
+        return res.json();
+      })
       .then((data) => {
-        refetch();
-        toast.success(`${userEmail} made an admin successfully`);
+        if (data.modifiedCount > 0) {
+          refetch();
+          toast.success(`${userEmail} made an admin successfully`);
+        }
       });
   };
   return (

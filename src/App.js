@@ -10,6 +10,7 @@ import Home from "./Pages/Home/Home";
 import PurchasePage from "./Pages/Home/Tools/PurchasePage/PurchasePage";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register/Register";
+import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
@@ -45,7 +46,14 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="orders" element={<MyOrders></MyOrders>}></Route>
           <Route path="review" element={<AddReview></AddReview>}></Route>
-          <Route path="makeAdmins" element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route
+            path="makeAdmins"
+            element={
+              <RequireAdmin>
+                <MakeAdmin></MakeAdmin>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
 
         <Route path="*" element={<NotFound></NotFound>}></Route>
