@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to="/myPortfolio">My Portfolio</Link>
       </li>
       <li>
         <Link to="/blog">Blog</Link>
@@ -73,11 +73,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div className=" hidden lg:flex">
-          <ul className="menu menu-horizontal">{menuBar}</ul>
+          <ul className="menu menu-horizontal p-0">{menuBar}</ul>
         </div>
 
         <div className="navbar-end">
-          <label htmlFor="" tabIndex="1" className="btn btn-ghost lg:hidden">
+          <label htmlFor="dashboard-sidebar" tabIndex="1" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -93,11 +93,6 @@ const Navbar = () => {
               />
             </svg>
           </label>
-
-          <label
-            htmlFor="dashboard-sidebar"
-            className="btn btn-ghost lg:hidden"
-          ></label>
         </div>
       </div>
     </div>

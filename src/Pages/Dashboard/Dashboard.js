@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [admin] = useAdmin(user);
 
   return (
-    <div>
+    
       <div className="drawer drawer-mobile px-5">
         <input
           id="dashboard-sidebar"
@@ -53,7 +53,7 @@ const Dashboard = () => {
           </ul>
         </div>
       </div>
-    </div>
+    
   );
 };
 

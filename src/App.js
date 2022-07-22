@@ -16,6 +16,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/blog" element={<Blogs></Blogs>}></Route>
+        <Route path="/myPortfolio" element={<MyPortfolio></MyPortfolio>}></Route>
 
         <Route
           path="/purchase/:id"
