@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import {
@@ -34,7 +33,6 @@ const Register = () => {
       const password = data?.password;
       await createUserWithEmailAndPassword(email, password);
       await updateProfile({ displayName });
-      // toast.success("Registration Successful");
     }
   };
   if (loading || updating) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
@@ -39,12 +39,16 @@ const Login = () => {
     toast.success("Email Send");
   };
 
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
+
   if (loading || sending) {
     return <Loading></Loading>;
   }
-  if (token) {
-    navigate(from, { replace: true });
-  }
+
   let errorElement;
   if (error || errorForget) {
     errorElement = (
