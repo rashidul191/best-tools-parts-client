@@ -14,7 +14,7 @@ const MyProfile = () => {
           <FontAwesomeIcon icon={faPen}></FontAwesomeIcon> Edit
         </button>
       </div>
-      <div class="grid md:grid-cols-2 card bg-base-100 shadow-xl py-10">
+      <div className="grid md:grid-cols-2 card bg-base-100 shadow-xl py-10">
         <div className="flex justify-center items-center">
           <div>
             <img
@@ -25,7 +25,7 @@ const MyProfile = () => {
             <button className="btn btn-error text-white mt-5">Edit Profile</button>
           </div>
         </div>
-        <div class="card-body">
+        <div className="card-body">
           <span>Full Name</span>
           <h2 className="text-xl font-bold">{user?.displayName}</h2>
           <span>Email</span>

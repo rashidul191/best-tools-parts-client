@@ -24,8 +24,8 @@ const MyOrder = ({ order, index, refetch }) => {
       <th>{index + 1}</th>
       <td>{toolName}</td>
       <td>
-        <div class="avatar">
-          <div class="w-20 rounded">
+        <div className="avatar">
+          <div className="w-20 rounded">
             <img src={toolImg} alt={toolName} />
           </div>
         </div>
@@ -35,32 +35,32 @@ const MyOrder = ({ order, index, refetch }) => {
       <td>
         {/* Delete Modal */}
         {!paid ? (
-          <label for="delete-modal" class="btn btn-error text-white mr-2">
+          <label htmlFor="delete-modal" className="btn btn-error text-white mr-2">
             Cancel
           </label>
         ) : (
           <p className="text-green-500">NO</p>
         )}
-        <input type="checkbox" id="delete-modal" class="modal-toggle" />
-        <div class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
+        <input type="checkbox" id="delete-modal" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
             <label
-              for="delete-modal"
-              class="btn btn-sm btn-circle absolute right-2 top-2"
+              htmlFor="delete-modal"
+              className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
-            <h3 class="font-bold text-2xl">Tool: {toolName}</h3>
-            <p class="py-4 text-error font-bold text-3xl">Are your sure??</p>
+            <h3 className="font-bold text-2xl">Tool: {toolName}</h3>
+            <p className="py-4 text-error font-bold text-3xl">Are your sure??</p>
             <p className="text-xl">Cancel Order</p>
-            <div class="modal-action">
+            <div className="modal-action">
               <button
                 onClick={handleCancelOrder}
                 className="btn btn-error text-white"
               >
                 Yes
               </button>
-              <label for="delete-modal" class="btn">
+              <label htmlFor="delete-modal" className="btn">
                 No
               </label>
             </div>

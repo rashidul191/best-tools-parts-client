@@ -33,8 +33,8 @@ const ToolsRow = ({ index, tool, refetch }) => {
     <tr>
       <th>{index + 1}</th>
       <td>
-        <div class="avatar">
-          <div class="w-20 rounded">
+        <div className="avatar">
+          <div className="w-20 rounded">
             <img src={img} alt="Tailwind-CSS-Avatar-component" />
           </div>
         </div>
@@ -43,28 +43,28 @@ const ToolsRow = ({ index, tool, refetch }) => {
       <td>{avaQuantity}</td>
       <td>
         {/* Add Quantity */}
-        <label for="addQuantity-modal" class="btn btn-secondary">
+        <label htmlFor="addQuantity-modal" className="btn btn-secondary">
           <span className="mr-2">Add Quantity</span>
         </label>
-        <input type="checkbox" id="addQuantity-modal" class="modal-toggle" />
-        <div class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
+        <input type="checkbox" id="addQuantity-modal" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
             <label
-              for="addQuantity-modal"
-              class="btn btn-sm btn-circle absolute right-2 top-2"
+              htmlFor="addQuantity-modal"
+              className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
             <form onSubmit={handleAddQuantity}>
-              <div class="form-control w-full max-w-xs">
-                <label class="label">
-                  <span class="label-text font-bold">Add Tool Quantity</span>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text font-bold">Add Tool Quantity</span>
                 </label>
                 <input
                   type="number"
                   name="addQuantity"
                   placeholder="Type here"
-                  class="input input-bordered w-full max-w-xs"
+                  className="input input-bordered w-full max-w-xs"
                 />
               </div>
 
@@ -79,30 +79,30 @@ const ToolsRow = ({ index, tool, refetch }) => {
       </td>
       <td>
         {/* Delete Modal */}
-        <label for="delete-modal" class="btn btn-error text-white">
+        <label htmlFor="delete-modal" className="btn btn-error text-white">
           <span className="mr-2">Delete</span>
           <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
         </label>
-        <input type="checkbox" id="delete-modal" class="modal-toggle" />
-        <div class="modal modal-bottom sm:modal-middle">
-          <div class="modal-box">
+        <input type="checkbox" id="delete-modal" className="modal-toggle" />
+        <div className="modal modal-bottom sm:modal-middle">
+          <div className="modal-box">
             <label
-              for="delete-modal"
-              class="btn btn-sm btn-circle absolute right-2 top-2"
+              htmlFor="delete-modal"
+              className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
-            <h3 class="font-bold text-2xl">Tool: {name}</h3>
-            <p class="py-4 text-error font-bold text-3xl">Are your sure??</p>
+            <h3 className="font-bold text-2xl">Tool: {name}</h3>
+            <p className="py-4 text-error font-bold text-3xl">Are your sure??</p>
             <p className="text-xl">Delete Tool</p>
-            <div class="modal-action">
+            <div className="modal-action">
               <button
                 onClick={handleDeleteProduct}
                 className="btn btn-error text-white"
               >
                 Yes
               </button>
-              <label for="delete-modal" class="btn">
+              <label htmlFor="delete-modal" className="btn">
                 No
               </label>
             </div>

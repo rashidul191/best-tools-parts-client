@@ -3,17 +3,17 @@ import React from "react";
 const MyPortfolio = () => {
   return (
     <div className="my-8 md:mt-10 md:mb-28">
-      <div class="card w-10/12 mx-auto bg-base-100 shadow-xl">
-        <figure class="px-10 pt-10">
+      <div className="card w-10/12 mx-auto bg-base-100 shadow-xl">
+        <figure className="px-10 pt-10">
           <img
             width={200}
             src="https://i.ibb.co/svwZDbn/Rashidul.jpg"
             alt="Shoes"
-            class="rounded-xl"
+            className="rounded-xl"
           />
         </figure>
-        <div class="card-body items-center text-center">
-          <h2 class="card-title">Name: Md Rashidul Islam</h2>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title">Name: Md Rashidul Islam</h2>
           <p>Email: rashidul.191cse.gub@gmail.ocm</p>
           <p className="font-bold">
             Hi, I am Rashidul Islam. I am study of Green University of

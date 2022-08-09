@@ -29,28 +29,28 @@ const Payment = () => {
       <h2>Payment {id}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 ">
-        <div class="card w-96 bg-base-100 shadow-xl text-center">
+        <div className="card w-96 bg-base-100 shadow-xl text-center">
           <figure>
             <img width={120} src={toolImg} alt={toolName} />
           </figure>
-          <div class="card-body">
-            <h2 class="text-xl font-bold">{toolName}</h2>
-            <p class="">Price: $ {toolPrice}</p>
-            <p class="">Quantity: {quantity}</p>
+          <div className="card-body">
+            <h2 className="text-xl font-bold">{toolName}</h2>
+            <p className="">Price: $ {toolPrice}</p>
+            <p className="">Quantity: {quantity}</p>
           </div>
         </div>
 
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
+        <div className="card bg-base-100 shadow-xl">
+          <div className="card-body">
             <h2 className="text-xl font-bold text-green-500 mb-5 ">Payment Here</h2>
             <Elements stripe={stripePromise}>
               <CheckoutForm userOrder={userOrder}/>
             </Elements>
 
-            {/* <h2 class="card-title">Card title!</h2>
+            {/* <h2 className="card-title">Card title!</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now</button>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Buy Now</button>
             </div> */}
           </div>
         </div>
