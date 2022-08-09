@@ -17,8 +17,6 @@ const MakeAdmin = () => {
     }).then((res) => res.json())
   );
 
-  console.log(users);
-
   if (isLoading) {
     return <Loading></Loading>;
   }
