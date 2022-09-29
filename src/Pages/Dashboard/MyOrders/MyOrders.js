@@ -16,7 +16,7 @@ const MyOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["user-orders"], () =>
-    fetch(`https://quiet-bayou-95560.herokuapp.com/orders?userEmail=${user?.email}`, {
+    fetch(`https://best-tools-part-server.onrender.com/orders?userEmail=${user?.email}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 const MyOrder = ({ order, index, refetch }) => {
   const { toolName, toolImg, quantity, toolPrice, _id, paid } = order;
   const handleCancelOrder = () => {
-    fetch(`https://quiet-bayou-95560.herokuapp.com/order/${_id}`, {
+    fetch(`https://best-tools-part-server.onrender.com/order/${_id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,

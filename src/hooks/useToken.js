@@ -7,7 +7,7 @@ const useToken = (user) => {
 
     const currentUser = { userEmail: userEmail };
     if (userEmail) {
-      fetch(`https://quiet-bayou-95560.herokuapp.com/user/${userEmail}`, {
+      fetch(`https://best-tools-part-server.onrender.com/user/${userEmail}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

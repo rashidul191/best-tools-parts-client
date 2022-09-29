@@ -7,7 +7,7 @@ const UserRow = ({ user, index, refetch }) => {
   const { userEmail, role } = user;
 
   const handleMakeAdmin = () => {
-    fetch(`https://quiet-bayou-95560.herokuapp.com/user/admin/${userEmail}`, {
+    fetch(`https://best-tools-part-server.onrender.com/user/admin/${userEmail}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access-token")}`,

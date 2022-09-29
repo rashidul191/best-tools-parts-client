@@ -13,6 +13,7 @@ const AddProduct = () => {
 
   const onSubmit = async (data) => {
     const image = data.image[0];
+    // console.log("Images: ",image)
     const formData = new FormData();
     formData.append("image", image);
     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
@@ -35,7 +36,7 @@ const AddProduct = () => {
           //   console.log(toolInfo)
           // send toolInfo on data base
 
-          fetch("https://quiet-bayou-95560.herokuapp.com/tool", {
+          fetch("https://best-tools-part-server.onrender.com/tool", {
             method: "POST",
             headers: {
               "content-type": "application/json",

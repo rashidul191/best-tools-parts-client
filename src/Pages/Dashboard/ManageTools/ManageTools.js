@@ -6,7 +6,7 @@ import ToolsRow from "./ToolsRow/ToolsRow";
 const ManageTools = () => {
     // react query
   const { data: tools, isLoading, refetch } = useQuery(["manage-tool"], () =>
-    fetch("https://quiet-bayou-95560.herokuapp.com/tools").then((res) => res.json())
+    fetch("https://best-tools-part-server.onrender.com/tools").then((res) => res.json())
   );
 
   if (isLoading) {

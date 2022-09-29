@@ -5,7 +5,7 @@ const BusinessSummary = () => {
   const icons = [faCoffee];
   const [businessSummary, setBusinessSummary] = useState([]);
   useEffect(() => {
-    fetch("https://quiet-bayou-95560.herokuapp.com/business")
+    fetch("https://best-tools-part-server.onrender.com/business")
       .then((res) => res.json())
       .then((data) => {
         setBusinessSummary(data);

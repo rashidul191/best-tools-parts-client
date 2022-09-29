@@ -18,7 +18,7 @@ const AddReview = () => {
       rating: event.target.rating.value,
       description: event.target.review.value,
     };
-    const url = `https://quiet-bayou-95560.herokuapp.com/reviews`;
+    const url = `https://best-tools-part-server.onrender.com/reviews`;
     fetch(url, {
       method: "POST",
       headers: {

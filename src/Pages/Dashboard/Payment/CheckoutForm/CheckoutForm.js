@@ -14,7 +14,7 @@ const CheckoutForm = ({ userOrder }) => {
   const { toolPrice, userName, userEmail, _id } = userOrder;
 
   useEffect(() => {
-    fetch("https://quiet-bayou-95560.herokuapp.com/create-payment-intent", {
+    fetch("https://best-tools-part-server.onrender.com/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -84,7 +84,7 @@ const CheckoutForm = ({ userOrder }) => {
         orderId: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://quiet-bayou-95560.herokuapp.com/order/${_id}`, {
+      fetch(`https://best-tools-part-server.onrender.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
